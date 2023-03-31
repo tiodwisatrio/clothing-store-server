@@ -1,5 +1,4 @@
 import Admin from "../models/Admin.js";
-import jwt from "jsonwebtoken";
 
 export const Login = async (req, res) => {
   const { username, password } = req.body;
@@ -18,16 +17,3 @@ export const Login = async (req, res) => {
   }
 };
 
-// export const Register = async (req, res) => {
-//   const { username, password, email } = req.body;
-//   try {
-//     const response = await Admin.create({
-//       email: email,
-//       username: username,
-//       password: password,
-//     });
-//     response && res.status(201).json({ msg: "Register Success" });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
