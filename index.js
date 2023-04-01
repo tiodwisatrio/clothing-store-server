@@ -1,10 +1,13 @@
-import express from 'express';
-import fileUpload from 'express-fileupload';
-import cors from 'cors';
+import express from "express";
+import fileUpload from "express-fileupload";
+import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
+
 import ProductRoute from "./routes/ProductRoute.js";
 import AdminRoute from "./routes/AdminRoute.js";
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -15,5 +18,5 @@ app.use(express.static("public"));
 app.use(ProductRoute);
 app.use(AdminRoute);
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-})
+  console.log(`Server running on port ${PORT}`);
+});
