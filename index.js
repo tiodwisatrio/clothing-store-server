@@ -6,6 +6,7 @@ dotenv.config();
 
 import ProductRoute from "./routes/ProductRoute.js";
 import AdminRoute from "./routes/AdminRoute.js";
+import CartsRoute from "./routes/CartsRoute.js";
 
 const PORT = process.env.PORT || 5000;
 
@@ -17,6 +18,7 @@ app.use(fileUpload());
 app.use(express.static("public"));
 app.use(ProductRoute);
 app.use(AdminRoute);
+app.use(CartsRoute);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
